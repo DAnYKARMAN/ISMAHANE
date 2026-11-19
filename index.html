@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ismahane VTC — Chauffeur privé Paris, Roissy & Orly</title>
+<meta name="description" content="Ismahane, chauffeur VTC à Paris : transferts aéroports Roissy-CDG et Orly, gares et trajets en Île-de-France. Accueil chaleureux, ponctualité et discrétion. Réservation en ligne.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="alternate icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14171c">
+<meta property="og:title" content="Ismahane VTC — Chauffeur privé Paris, Roissy & Orly">
+<meta property="og:description" content="Transferts aéroports et trajets dans Paris avec une chauffeure attentionnée. Réservation en ligne.">
+<meta property="og:image" content="ismahane-vtc.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================
+     COULEURS DU SITE (modifiables ici)
+     ===================================================== */
+  :root{
+    --nuit:#14171c;      /* noir bleuté */
+    --nuit-2:#1d2128;
+    --or:#c9a96a;        /* doré */
+    --or-fonce:#a88a4e;
+    --creme:#faf7f2;     /* fond clair */
+    --sable:#f1ebe1;
+    --texte:#2a2d33;
+    --gris:#6b6f78;
+    --rayon:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--texte);background:var(--creme);line-height:1.6;font-size:16px}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.15;color:var(--nuit)}
+  .eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--or-fonce);font-weight:600}
+
+  /* ---------- En-tête ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(20,23,28,.96);backdrop-filter:blur(8px);color:#fff}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand img{width:38px;height:38px}
+  .brand b{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.5rem;font-weight:600;letter-spacing:.02em}
+  .brand span{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--or);margin-top:-4px}
+  .menu{display:flex;gap:28px;font-size:.92rem}
+  .menu a{text-decoration:none;color:#d9dbe0}
+  .menu a:hover{color:var(--or)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:600 .95rem Inter,sans-serif;text-decoration:none;border-radius:999px;padding:13px 26px;transition:.2s}
+  .btn-or{background:var(--or);color:var(--nuit)}
+  .btn-or:hover{background:#d8bb80}
+  .btn-ligne{border:1.5px solid rgba(255,255,255,.35);color:#fff;background:transparent}
+  .btn-ligne:hover{border-color:var(--or);color:var(--or)}
+  .btn-sombre{background:var(--nuit);color:#fff}
+  .btn-sombre:hover{background:var(--nuit-2)}
+  .nav .btn{padding:10px 18px;font-size:.88rem}
+
+  /* ---------- Accueil (photo) ---------- */
+  .hero{position:relative;min-height:calc(100vh - 70px);max-height:860px;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--nuit)}
+  .hero img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% center}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,28,0) 0%,rgba(20,23,28,.15) 38%,rgba(20,23,28,.82) 62%,rgba(20,23,28,.95) 100%)}
+  .hero .wrap{position:relative;z-index:2;width:100%;display:flex;justify-content:flex-end}
+  .hero-txt{max-width:500px;padding:60px 0}
+  .hero h1{color:#fff;font-size:clamp(2.4rem,4.6vw,3.7rem);margin:14px 0 18px}
+  .hero h1 em{color:var(--or);font-style:italic}
+  .hero p{color:#d6d8dd;font-size:1.08rem;margin-bottom:30px}
+  .hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+  .badges{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:34px;font-size:.88rem;color:#c3c6cc}
+  .badges span::before{content:"✓";color:var(--or);margin-right:7px;font-weight:700}
+
+  section{padding:96px 0}
+  .titre{max-width:680px;margin-bottom:52px}
+  .titre h2{font-size:clamp(2rem,3.4vw,2.8rem);margin:10px 0 14px}
+  .titre p{color:var(--gris);font-size:1.05rem}
+  .centre{text-align:center;margin-left:auto;margin-right:auto}
+
+  /* ---------- Engagement ---------- */
+  .valeurs{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .valeur{background:#fff;border-radius:var(--rayon);padding:30px 26px;border:1px solid #ece5d8}
+  .valeur .ico{width:46px;height:46px;border-radius:50%;background:var(--sable);display:grid;place-items:center;margin-bottom:18px}
+  .valeur .ico svg{width:22px;height:22px;stroke:var(--or-fonce)}
+  .valeur h3{font-size:1.4rem;margin-bottom:8px}
+  .valeur p{color:var(--gris);font-size:.95rem}
+
+  /* ---------- Citation ---------- */
+  .mot{background:var(--nuit);color:#fff;padding:90px 0}
+  .mot .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:center}
+  .mot img{border-radius:var(--rayon);aspect-ratio:4/5;object-fit:cover;object-position:22% center}
+  .mot blockquote{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.35;font-style:italic;color:#f1ece2}
+  .mot blockquote::before{content:"“";display:block;font-size:4.5rem;line-height:.6;color:var(--or);margin-bottom:10px}
+  .mot cite{display:block;margin-top:22px;font-style:normal;color:var(--or);letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;font-weight:600}
+  .mot .sous{color:#aeb2ba;margin-top:18px;font-size:1rem}
+
+  /* ---------- Trajets ---------- */
+  .trajets{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .trajet{background:#fff;border-radius:var(--rayon);overflow:hidden;border:1px solid #ece5d8;display:flex;flex-direction:column}
+  .trajet .haut{background:var(--nuit);color:var(--or);padding:26px 24px 22px;font-family:"Cormorant Garamond",Georgia,serif}
+  .trajet .haut small{display:block;font-family:Inter,sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#9ea3ab}
+  .trajet .haut b{font-size:1.65rem;font-weight:600;color:#fff}
+  .trajet .corps{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+  .trajet ul{list-style:none;color:var(--gris);font-size:.93rem;flex:1}
+  .trajet li{padding:5px 0 5px 20px;position:relative}
+  .trajet li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1.5px;background:var(--or)}
+  .trajet a{margin-top:18px;font-weight:600;font-size:.92rem;color:var(--nuit);text-decoration:none;border-bottom:1.5px solid var(--or);align-self:flex-start;padding-bottom:2px}
+
+  /* ---------- Réservation ---------- */
+  .resa{background:var(--sable)}
+  .resa .wrap{display:grid;grid-template-columns:.9fr 1.3fr;gap:56px;align-items:start}
+  .resa-info h2{font-size:clamp(2rem,3.4vw,2.8rem);margin:10px 0 16px}
+  .resa-info p{color:var(--gris);margin-bottom:22px}
+  .etapes{list-style:none;counter-reset:e;margin:28px 0}
+  .etapes li{counter-increment:e;position:relative;padding:0 0 20px 48px;color:var(--texte)}
+  .etapes li::before{content:counter(e);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:50%;background:var(--nuit);color:var(--or);display:grid;place-items:center;font-weight:600;font-size:.9rem}
+  .etapes b{display:block}
+  .etapes span{color:var(--gris);font-size:.93rem}
+  .direct{background:#fff;border-radius:var(--rayon);padding:22px 24px;border:1px solid #e6dccb}
+  .direct p{margin:0 0 6px;color:var(--gris);font-size:.9rem}
+  .direct a{font-size:1.35rem;font-weight:600;color:var(--nuit);text-decoration:none}
+
+  form{background:#fff;border-radius:18px;padding:36px;box-shadow:0 20px 50px -20px rgba(20,23,28,.25)}
+  .choix{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+  .choix button{border:1.5px solid #e2d9c9;background:#fff;border-radius:999px;padding:8px 16px;font:500 .88rem Inter,sans-serif;cursor:pointer;color:var(--texte)}
+  .choix button.actif,.choix button:hover{border-color:var(--or);background:#fbf6ec}
+  .grille{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+  .plein{grid-column:1/-1}
+  label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--nuit)}
+  label i{font-style:normal;font-weight:400;color:var(--gris)}
+  input,select,textarea{width:100%;border:1.5px solid #e2ddd4;border-radius:10px;padding:12px 14px;font:400 .97rem Inter,sans-serif;color:var(--texte);background:#fdfcfa}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--or);background:#fff}
+  textarea{min-height:90px;resize:vertical}
+  .separateur{grid-column:1/-1;border-top:1px solid #eee7da;margin:8px 0 2px;padding-top:14px;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--or-fonce);font-weight:600}
+  .cache{display:none}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;color:var(--gris);font-weight:400}
+  .consent input{width:auto;margin-top:4px}
+  form .btn{width:100%;margin-top:22px;padding:16px}
+  .note{font-size:.82rem;color:var(--gris);text-align:center;margin-top:12px}
+  .merci{display:none;text-align:center;padding:30px 10px}
+  .merci h3{font-size:2rem;margin:14px 0 10px}
+  .merci p{color:var(--gris)}
+  .merci .rond{width:64px;height:64px;border-radius:50%;background:var(--sable);display:grid;place-items:center;margin:0 auto;color:var(--or-fonce);font-size:1.8rem}
+
+  /* ---------- Questions ---------- */
+  .faq{max-width:820px;margin:0 auto}
+  details{border-bottom:1px solid #e6dfd2;padding:20px 0}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:20px;color:var(--nuit)}
+  summary::after{content:"+";color:var(--or-fonce);font-size:1.4rem;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--gris);margin-top:10px}
+
+  /* ---------- Pied de page ---------- */
+  footer{background:var(--nuit);color:#aeb2ba;padding:60px 0 100px;font-size:.92rem}
+  footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+  footer h4{color:#fff;font-weight:600;margin-bottom:12px;font-size:.95rem}
+  footer a{color:#d6d8dd;text-decoration:none}
+  footer a:hover{color:var(--or)}
+  footer .legal{border-top:1px solid #2a2f37;margin-top:40px;padding-top:22px;font-size:.8rem;color:#80858e}
+
+  /* Barre d'appel sur téléphone */
+  .barre-mobile{display:none}
+
+  @media (max-width:980px){
+    .valeurs,.trajets{grid-template-columns:1fr 1fr}
+    .resa .wrap,.mot .wrap{grid-template-columns:1fr}
+    .mot img{max-height:420px;aspect-ratio:auto;width:100%}
+    .menu{display:none}
+  }
+  @media (max-width:700px){
+    section{padding:70px 0}
+    .nav .btn{display:none}
+    .hero{min-height:auto;max-height:none;display:block}
+    .hero img.photo{position:relative;height:56vw;min-height:260px;object-position:28% center}
+    .hero::after{display:none}
+    .hero .wrap{display:block}
+    .hero-txt{padding:34px 0 50px}
+    .valeurs,.trajets,.grille,footer .cols{grid-template-columns:1fr}
+    form{padding:26px 20px}
+    .barre-mobile{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--nuit);padding:10px 12px;gap:10px;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
+    .barre-mobile a{flex:1;padding:13px 10px;font-size:.92rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     COORDONNÉES À COMPLÉTER
+     Remplacez partout :  06 00 00 00 00  /  33600000000
+     et  contact@ismahane-vtc.fr  par les vraies coordonnées.
+     ========================================================= -->
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#accueil">
+      <img src="favicon.svg" alt="">
+      <div><b>Ismahane</b><span>Chauffeur privé</span></div>
+    </a>
+    <nav class="menu">
+      <a href="#engagement">Mon engagement</a>
+      <a href="#trajets">Trajets</a>
+      <a href="#reserver">Réserver</a>
+      <a href="#questions">Questions</a>
+    </nav>
+    <a class="btn btn-or" href="#reserver">Réserver une course</a>
+  </div>
+</header>
+
+<section class="hero" id="accueil" style="padding:0">
+  <img class="photo" src="ismahane-vtc.jpg" alt="Ismahane, chauffeure VTC, devant sa berline noire à Paris">
+  <div class="wrap">
+    <div class="hero-txt">
+      <div class="eyebrow" style="color:var(--or)">Chauffeur VTC · Paris & Île-de-France</div>
+      <h1>Votre trajet commence par <em>un sourire.</em></h1>
+      <p>Je vous conduis à Roissy, à Orly ou partout dans Paris avec ponctualité, discrétion et une attention sincère. Ici, vous n'êtes pas une course&nbsp;: vous êtes mon invité.</p>
+      <div class="actions">
+        <a class="btn btn-or" href="#reserver">Demander une réservation</a>
+        <a class="btn btn-ligne" href="tel:+33600000000">Appeler Ismahane</a>
+      </div>
+      <div class="badges">
+        <span>Prix annoncé à l'avance</span>
+        <span>Suivi de vol</span>
+        <span>Véhicule électrique</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="engagement">
+  <div class="wrap">
+    <div class="titre centre">
+      <div class="eyebrow">Mon engagement</div>
+      <h2>Le confort, et surtout la courtoisie</h2>
+      <p>Un bon trajet, ce n'est pas seulement arriver à l'heure. C'est être accueilli, écouté et rassuré du début à la fin.</p>
+    </div>
+    <div class="valeurs">
+      <div class="valeur">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+        <h3>Un accueil chaleureux</h3>
+        <p>Je vous accueille avec le sourire, je m'occupe de vos bagages et je m'adapte à votre humeur : conversation ou calme.</p>
+      </div>
+      <div class="valeur">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Toujours à l'heure</h3>
+        <p>J'arrive en avance et je suis votre vol en temps réel. Un retard d'avion ? Je vous attends, sans stress.</p>
+      </div>
+      <div class="valeur">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>En toute sérénité</h3>
+        <p>Conduite douce, véhicule impeccable, discrétion totale. Idéal pour les familles, les femmes seules et les voyageurs d'affaires.</p>
+      </div>
+      <div class="valeur">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/></svg></div>
+        <h3>Un prix clair</h3>
+        <p>Le tarif est annoncé et confirmé avant la course. Pas de compteur, pas de mauvaise surprise à l'arrivée.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mot">
+  <div class="wrap">
+    <img src="ismahane-vtc-1024.jpg" alt="Ismahane souriante près de sa voiture" loading="lazy">
+    <div>
+      <blockquote>Je conduis mes clients comme j'aimerais que l'on conduise ma propre famille&nbsp;: avec respect, gentillesse et attention.</blockquote>
+      <cite>— Ismahane, votre chauffeure</cite>
+      <p class="sous">Un seul interlocuteur, du premier message jusqu'à votre arrivée. Vous savez qui viendra vous chercher.</p>
+    </div>
+  </div>
+</div>
+
+<section id="trajets">
+  <div class="wrap">
+    <div class="titre">
+      <div class="eyebrow">Trajets</div>
+      <h2>Où souhaitez-vous aller ?</h2>
+      <p>Paris, la région parisienne et, surtout, les aéroports. Disponible tôt le matin comme tard le soir, sur réservation.</p>
+    </div>
+    <div class="trajets">
+      <div class="trajet">
+        <div class="haut"><small>Aéroport</small><b>Roissy – CDG</b></div>
+        <div class="corps">
+          <ul><li>Tous les terminaux</li><li>Accueil en zone d'arrivée avec pancarte à votre nom</li><li>Suivi de votre vol</li></ul>
+          <a href="#reserver" data-trajet="cdg">Réserver ce trajet</a>
+        </div>
+      </div>
+      <div class="trajet">
+        <div class="haut"><small>Aéroport</small><b>Orly</b></div>
+        <div class="corps">
+          <ul><li>Orly 1, 2, 3 et 4</li><li>Accueil personnalisé à l'arrivée</li><li>Aide aux bagages</li></ul>
+          <a href="#reserver" data-trajet="orly">Réserver ce trajet</a>
+        </div>
+      </div>
+      <div class="trajet">
+        <div class="haut"><small>Ville</small><b>Paris & Île-de-France</b></div>
+        <div class="corps">
+          <ul><li>Rendez-vous, hôtels, restaurants</li><li>Gares parisiennes</li><li>Toute la région parisienne</li></ul>
+          <a href="#reserver" data-trajet="paris">Réserver ce trajet</a>
+        </div>
+      </div>
+      <div class="trajet">
+        <div class="haut"><small>Sur mesure</small><b>Mise à disposition</b></div>
+        <div class="corps">
+          <ul><li>À l'heure ou à la demi-journée</li><li>Événements, shopping, visites</li><li>Plusieurs arrêts</li></ul>
+          <a href="#reserver" data-trajet="dispo">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resa" id="reserver">
+  <div class="wrap">
+    <div class="resa-info">
+      <div class="eyebrow">Réservation</div>
+      <h2>Réservez votre course en 2 minutes</h2>
+      <p>Remplissez le formulaire : je vous réponds rapidement avec le prix et la confirmation.</p>
+      <ol class="etapes">
+        <li><b>Vous envoyez votre demande</b><span>Adresse, date, heure et nombre de passagers.</span></li>
+        <li><b>Je vous confirme le prix</b><span>Par téléphone, SMS ou e-mail, avant toute réservation.</span></li>
+        <li><b>Je viens vous chercher</b><span>À l'heure, avec le sourire.</span></li>
+      </ol>
+      <div class="direct">
+        <p>Départ dans moins de 2 heures ? Appelez-moi directement :</p>
+        <a href="tel:+33600000000">06 00 00 00 00</a>
+      </div>
+    </div>
+
+    <div>
+      <!-- Formulaire géré automatiquement par Netlify (rubrique « Forms » du tableau de bord) -->
+      <form name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="formulaire">
+        <input type="hidden" name="form-name" value="reservation">
+        <p class="cache"><label>Ne pas remplir : <input name="bot-field"></label></p>
+        <input type="hidden" name="type-de-trajet" id="typeTrajet" value="">
+
+        <div class="choix" id="choix">
+          <button type="button" data-trajet="cdg">Roissy – CDG</button>
+          <button type="button" data-trajet="orly">Orly</button>
+          <button type="button" data-trajet="paris">Paris / Île-de-France</button>
+          <button type="button" data-trajet="dispo">Mise à disposition</button>
+        </div>
+
+        <div class="grille">
+          <div class="plein"><label for="depart">Adresse de départ</label><input id="depart" name="depart" required placeholder="Ex. : 12 rue de Rivoli, Paris 4e"></div>
+          <div class="plein"><label for="arrivee">Destination</label><input id="arrivee" name="arrivee" required placeholder="Ex. : Aéroport Roissy – CDG, terminal 2E"></div>
+          <div><label for="date">Date</label><input id="date" name="date" type="date" required></div>
+          <div><label for="heure">Heure de prise en charge</label><input id="heure" name="heure" type="time" required></div>
+          <div><label for="passagers">Passagers</label>
+            <select id="passagers" name="passagers"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+          <div><label for="bagages">Bagages</label>
+            <select id="bagages" name="bagages"><option>Aucun</option><option>1</option><option selected>2</option><option>3</option><option>4 ou plus</option></select></div>
+          <div class="plein"><label for="vol">N° de vol ou de train <i>(facultatif)</i></label><input id="vol" name="numero-vol-train" placeholder="Ex. : AF 1234"></div>
+
+          <div class="separateur">Vos coordonnées</div>
+          <div class="plein"><label for="nom">Nom et prénom</label><input id="nom" name="nom" required autocomplete="name"></div>
+          <div><label for="tel">Téléphone</label><input id="tel" name="telephone" type="tel" required autocomplete="tel" placeholder="06 12 34 56 78"></div>
+          <div><label for="email">E-mail</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div class="plein"><label for="message">Un besoin particulier ? <i>(siège enfant, aller-retour, arrêt…)</i></label><textarea id="message" name="message"></textarea></div>
+          <div class="plein"><label class="consent"><input type="checkbox" required name="accord" value="oui"> J'accepte que mes informations soient utilisées uniquement pour traiter ma demande de réservation.</label></div>
+        </div>
+
+        <button class="btn btn-sombre" type="submit">Envoyer ma demande</button>
+        <p class="note">Ce n'est pas encore une réservation ferme : je vous recontacte pour confirmer le prix.</p>
+      </form>
+
+      <div class="merci" id="merci" style="background:#fff;border-radius:18px;padding:50px 30px">
+        <div class="rond">✓</div>
+        <h3>Merci, c'est bien reçu !</h3>
+        <p id="merciTexte">Je vous recontacte très vite pour vous confirmer le prix et l'horaire.<br>À bientôt, Ismahane</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="questions">
+  <div class="wrap">
+    <div class="titre centre">
+      <div class="eyebrow">Questions fréquentes</div>
+      <h2>Bon à savoir</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Que se passe-t-il si mon vol a du retard ?</summary><p>Je suis votre vol en temps réel grâce au numéro que vous m'indiquez. J'adapte mon heure d'arrivée : vous n'avez rien à faire.</p></details>
+      <details><summary>Où vous retrouver à l'aéroport ?</summary><p>Je vous attends dans le hall d'arrivée avec une pancarte à votre nom, puis je vous accompagne jusqu'à la voiture et je m'occupe de vos bagages.</p></details>
+      <details><summary>Comment connaître le prix ?</summary><p>Envoyez votre demande ou appelez-moi : je vous annonce un prix fixe avant la course. Il ne change pas en cas d'embouteillage.</p></details>
+      <details><summary>Puis-je réserver pour quelqu'un d'autre ?</summary><p>Bien sûr. Indiquez simplement le nom et le téléphone du passager dans le champ « Un besoin particulier ».</p></details>
+      <details><summary>Avez-vous un siège enfant ?</summary><p>Oui, sur demande. Précisez-le lors de la réservation avec l'âge de l'enfant.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="#accueil" style="color:#fff"><img src="favicon.svg" alt=""><div><b>Ismahane</b><span>Chauffeur privé</span></div></a>
+        <p style="margin-top:16px;max-width:340px">Chauffeur VTC à Paris. Transferts Roissy – CDG, Orly, gares et trajets en Île-de-France.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:+33600000000">06 00 00 00 00</a></p>
+        <p><a href="mailto:contact@ismahane-vtc.fr">contact@ismahane-vtc.fr</a></p>
+        <p><a href="https://wa.me/33600000000">WhatsApp</a></p>
+      </div>
+      <div>
+        <h4>Zones desservies</h4>
+        <p>Paris intra-muros<br>Aéroport Roissy – CDG<br>Aéroport d'Orly<br>Île-de-France</p>
+      </div>
+    </div>
+    <div class="legal">
+      © <span id="annee">2026</span> Ismahane VTC · Carte professionnelle VTC n° [À COMPLÉTER] · SIRET [À COMPLÉTER] · Réservation préalable obligatoire.
+    </div>
+  </div>
+</footer>
+
+<div class="barre-mobile">
+  <a class="btn btn-ligne" href="tel:+33600000000">📞 Appeler</a>
+  <a class="btn btn-or" href="#reserver">Réserver</a>
+</div>
+
+<script>
+  // Trajets proposés : remplit automatiquement le formulaire
+  var trajets = {
+    cdg:   {nom:"Roissy – CDG",          arrivee:"Aéroport Roissy – Charles de Gaulle"},
+    orly:  {nom:"Orly",                  arrivee:"Aéroport d'Orly"},
+    paris: {nom:"Paris / Île-de-France", arrivee:""},
+    dispo: {nom:"Mise à disposition",    arrivee:"Mise à disposition (préciser la durée ci-dessous)"}
+  };
+  function choisir(code){
+    var t = trajets[code]; if(!t) return;
+    document.getElementById('typeTrajet').value = t.nom;
+    document.querySelectorAll('#choix button').forEach(function(b){ b.classList.toggle('actif', b.dataset.trajet===code); });
+    var arr = document.getElementById('arrivee');
+    if(t.arrivee && (!arr.value || arr.dataset.auto==='1')){ arr.value = t.arrivee; arr.dataset.auto='1'; }
+    if(!t.arrivee && arr.dataset.auto==='1'){ arr.value=''; arr.dataset.auto='0'; }
+  }
+  document.querySelectorAll('[data-trajet]').forEach(function(el){
+    el.addEventListener('click', function(){ choisir(el.dataset.trajet); });
+  });
+  document.getElementById('arrivee').addEventListener('input', function(){ this.dataset.auto='0'; });
+
+  // Date minimale = aujourd'hui
+  var d = new Date(), j = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  document.getElementById('date').min = j;
+  document.getElementById('annee').textContent = d.getFullYear();
+
+  // Envoi du formulaire
+  var form = document.getElementById('formulaire');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var bouton = form.querySelector('button[type=submit]');
+    bouton.disabled = true; bouton.textContent = 'Envoi en cours…';
+    function fini(texte){
+      form.style.display='none';
+      if(texte) document.getElementById('merciTexte').innerHTML = texte;
+      document.getElementById('merci').style.display='block';
+      document.getElementById('merci').scrollIntoView({behavior:'smooth',block:'center'});
+    }
+    // Aperçu (hors site en ligne) : on n'envoie rien
+    if(/claude|localhost|^$/i.test(location.hostname) || location.protocol==='file:'){
+      fini("Ceci est un aperçu : une fois le site en ligne, la demande arrivera directement chez Ismahane.");
+      return;
+    }
+    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams(new FormData(form)).toString()})
+    .then(function(r){ if(!r.ok) throw 0; fini(); })
+    .catch(function(){
+      bouton.disabled=false; bouton.textContent='Envoyer ma demande';
+      fini("Désolée, l'envoi n'a pas fonctionné.<br>Appelez-moi au <b>06 00 00 00 00</b>, je prends votre réservation par téléphone.");
+    });
+  });
+</script>
+</body>
+</html>
